@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParProg.WavDecoder", "ParProg.WavDecoder\ParProg.WavDecoder.csproj", "{0A8F89A3-116F-434B-8AEB-9B9569D4F091}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParProg.WavCLI", "ParProg.WavCLI\ParProg.WavCLI.csproj", "{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0A8F89A3-116F-434B-8AEB-9B9569D4F091}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8F89A3-116F-434B-8AEB-9B9569D4F091}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8F89A3-116F-434B-8AEB-9B9569D4F091}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8F89A3-116F-434B-8AEB-9B9569D4F091}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
