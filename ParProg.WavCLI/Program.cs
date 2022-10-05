@@ -1,6 +1,6 @@
 ﻿using ParProg.WavDecoder;
 
-(int, int) CountAbs(float[] data, float target)
+(int, int) CountAbs(IEnumerable<float> data, float target)
 {
     var min = 0;
     var max = 0;
@@ -19,11 +19,11 @@ var target = 16000;
 
 var wavDecoder = new WavDecoder(file);
 var description = wavDecoder.Describe();
-
 Console.WriteLine(description);
+
 var data = wavDecoder.Decode();
 Console.WriteLine("Unfillterd datas:");
-Console.WriteLine($"Lenght: {data.Length} | Min: {data.Min()} | Max: {data.Max()}");
+Console.WriteLine($"Lenght: {data.Count} | Min: {data.Min()} | Max: {data.Max()}");
 var (min, max) = CountAbs(data, target);
 
 Console.WriteLine("Filltered:");

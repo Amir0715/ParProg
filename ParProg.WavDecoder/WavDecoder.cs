@@ -22,17 +22,17 @@ public class WavDecoder : IDisposable
         ReadHeader(_stream);
     }
 
-    public float[] Decode()
+    public List<float> Decode()
     {
-        var bytesPerSample = Header.bitsPerSample / 8;
+        var bytesPerSample = Header.FmtChunk.bitsPerSample / 8;
         var buffer = new byte[bytesPerSample];
-        var result = new List<float>();
-        while (true)
+        var result = new List<float>(Header.DataChunk.chunkSize / bytesPerSample);
+        var i = 0;
+        while (i < Header.DataChunk.data.Length-bytesPerSample)
         {
-            var readed = _stream.Read(buffer, 0, bytesPerSample);
-            if (readed == 0)
-                break;
-            switch (Header.bitsPerSample)
+            buffer = Header.DataChunk.data[new Range(i, i + bytesPerSample)];
+            i += bytesPerSample;
+            switch (Header.FmtChunk.bitsPerSample)
             {
                 case 16: 
                     result.Add(BitConverter.ToInt16(buffer));
@@ -46,7 +46,7 @@ public class WavDecoder : IDisposable
             }
         }
 
-        return result.ToArray();
+        return result;
     }
 
     private void ReadHeader(FileStream stream)
