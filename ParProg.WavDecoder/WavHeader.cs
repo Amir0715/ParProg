@@ -41,6 +41,8 @@ public class WavHeader
                     ListChunk = new ListChunk(fileStream);
                     break;
                 default:
+                    var subchunkSize = binaryReader.ReadInt32();
+                    binaryReader.ReadBytes(subchunkSize);
                     break;
             }
         }

@@ -14,7 +14,7 @@
 }
 
 
-var file = "./fileSample1.wav";
+var file = "./Assets/fileSample1.wav";
 var target = 16000;
 
 var wavDecoder = new WavDecoder(file);
@@ -22,6 +22,7 @@ var description = wavDecoder.Describe();
 Console.WriteLine(description);
 
 var data = wavDecoder.Decode();
+
 Console.WriteLine("Unfillterd datas:");
 Console.WriteLine($"Lenght: {data.Count} | Min: {data.Min()} | Max: {data.Max()}");
 var (min, max) = CountAbs(data, target);

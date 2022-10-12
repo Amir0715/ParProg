@@ -11,4 +11,10 @@
       <ProjectReference Include="..\ParProg.WavDecoder\ParProg.WavDecoder.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="Assets\fileSample1.wav">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
