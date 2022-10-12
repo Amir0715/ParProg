@@ -6,7 +6,7 @@ namespace ParProg.WavDecoder;
 public class WavDecoder : IDisposable
 {
     private FileStream _stream;
-    private delegate float Converter(byte[] buffer);
+    private delegate float Converter(Span<byte> buffer);
 
     public WavHeader Header { get; private set; }
 
@@ -45,9 +45,11 @@ public class WavDecoder : IDisposable
                 throw new NotImplementedException();
         }
 
-        while (i < Header.DataChunk.data.Count - bytesPerSample)
+
+        var dataSpan = new Span<byte>(Header.DataChunk.data);
+        while (i < Header.DataChunk.data.Length - bytesPerSample)
         {
-            var buffer = Header.DataChunk.data.Skip(i).Take(bytesPerSample).ToArray();
+            var buffer = dataSpan.Slice(i, bytesPerSample);
             result.Add(converter(buffer));
             i += bytesPerSample;
         }

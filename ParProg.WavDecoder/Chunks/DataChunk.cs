@@ -7,14 +7,14 @@ public class DataChunk : IChunk
     public string chunkId { get; }
     public int chunkSize { get; }
     
-    public List<byte> data { get; }
+    public byte[] data { get; }
 
     public DataChunk(FileStream fileStream)
     {
         var binaryReader = new BinaryReader(fileStream);
         chunkId = "data";
         chunkSize = binaryReader.ReadInt32();
-        data = binaryReader.ReadBytes(chunkSize).ToList();
+        data = binaryReader.ReadBytes(chunkSize);
     }
 
     public string Describe()
@@ -22,7 +22,7 @@ public class DataChunk : IChunk
         var stringBuilder = new StringBuilder();
         stringBuilder.AppendLine($"ChunkId: {chunkId}");
         stringBuilder.AppendLine($"ChunkSize: {chunkSize}");
-        stringBuilder.Append($"DataLenght: {data.Count}");
+        stringBuilder.Append($"DataLenght: {data.Length}");
         return stringBuilder.ToString();
     }
 }
