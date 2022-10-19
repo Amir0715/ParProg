@@ -4,7 +4,7 @@ public static class Program
 {
     public static void Main(string[] args)
     {
-        var FILE = string.Empty;
+        var FILE_PATH = string.Empty;
         var TARGET = 16000;
         var THREAD_COUNT = 4;
 
@@ -20,7 +20,7 @@ public static class Program
             return;
         }
 
-        FILE = args[0];
+        FILE_PATH = args[0];
 
         switch (args.Length)
         {
@@ -32,7 +32,7 @@ public static class Program
                 break;
         }
 
-        var wavDecoder = new WavDecoder(FILE);
+        var wavDecoder = new WavDecoder(FILE_PATH);
         var description = wavDecoder.Describe();
         Console.WriteLine(description);
 

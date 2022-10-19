@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParProg.WavDecoder", "ParPr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParProg.WavCLI", "ParProg.WavCLI\ParProg.WavCLI.csproj", "{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParProg.WavCliMultiProcess", "ParProg.WavCliMultiProcess\ParProg.WavCliMultiProcess.csproj", "{52390AFF-07FE-4DCE-A33F-9DDA966CDC2E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E94D3328-EE97-4FDE-96EF-F63C45E03FB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{52390AFF-07FE-4DCE-A33F-9DDA966CDC2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{52390AFF-07FE-4DCE-A33F-9DDA966CDC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{52390AFF-07FE-4DCE-A33F-9DDA966CDC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{52390AFF-07FE-4DCE-A33F-9DDA966CDC2E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
